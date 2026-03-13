@@ -1,0 +1,329 @@
+/**
+ * RPG Master Theme - DM Dashboard Styles
+ */
+
+/* Tab Navigation */
+.rmt-nav-tab {
+    cursor: pointer;
+}
+
+/* Tab Content */
+.rmt-tab-content {
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Session Panel */
+.rmt-session-panel {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 20px;
+}
+
+.rmt-session-main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.rmt-session-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Narration Box */
+.rmt-narration-box {
+    background: linear-gradient(135deg, rgba(219,166,23,0.1), rgba(15,52,96,0.3));
+    border: 1px solid rgba(219,166,23,0.3);
+    border-radius: 12px;
+    padding: 25px;
+    font-size: 16px;
+    line-height: 1.8;
+    font-style: italic;
+    color: #f0e6d0;
+    position: relative;
+}
+
+.rmt-narration-box::before {
+    content: '📖';
+    position: absolute;
+    top: -15px;
+    left: 20px;
+    font-size: 28px;
+    background: var(--rmt-bg-dark);
+    padding: 0 10px;
+}
+
+/* Scene Flow */
+.rmt-scene-flow {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding: 10px 0;
+}
+
+.rmt-scene-card {
+    min-width: 180px;
+    padding: 12px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--rmt-border);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+    flex-shrink: 0;
+}
+
+.rmt-scene-card:hover {
+    background: rgba(123,45,142,0.2);
+    border-color: var(--rmt-primary-light);
+}
+
+.rmt-scene-card.active {
+    background: rgba(123,45,142,0.3);
+    border-color: var(--rmt-gold);
+    box-shadow: 0 0 10px rgba(255,215,0,0.2);
+}
+
+.rmt-scene-card .scene-order {
+    font-size: 11px;
+    color: var(--rmt-secondary);
+    font-weight: 700;
+}
+
+.rmt-scene-card .scene-name {
+    font-weight: 600;
+    font-size: 14px;
+    margin: 4px 0;
+}
+
+.rmt-scene-card .scene-type {
+    font-size: 11px;
+    color: #888;
+}
+
+/* NPC Panel */
+.rmt-npc-card {
+    display: flex;
+    gap: 15px;
+    padding: 15px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--rmt-border);
+    border-radius: 10px;
+    margin-bottom: 10px;
+    transition: all 0.2s;
+}
+
+.rmt-npc-card:hover {
+    background: rgba(255,255,255,0.06);
+}
+
+.rmt-npc-portrait {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--rmt-secondary);
+    flex-shrink: 0;
+}
+
+.rmt-npc-info h4 {
+    margin: 0 0 4px 0;
+    color: var(--rmt-gold);
+    font-family: var(--rmt-font);
+}
+
+.rmt-npc-info p {
+    margin: 0;
+    font-size: 13px;
+    color: #aaa;
+}
+
+/* DM Notes */
+.rmt-dm-notes {
+    background: rgba(220,50,50,0.05);
+    border: 1px solid rgba(220,50,50,0.2);
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.rmt-dm-notes h4 {
+    color: #ff6666;
+    margin: 0 0 8px;
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
+/* Player Control Cards */
+.rmt-player-control-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--rmt-border);
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 12px;
+}
+
+.rmt-player-control-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.rmt-player-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--rmt-bg-card);
+    border: 2px solid var(--rmt-primary);
+    object-fit: cover;
+}
+
+.rmt-player-control-actions {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+/* Dice Roller */
+.rmt-dice-roller {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.rmt-dice-toggle {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--rmt-primary);
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(123,45,142,0.5);
+    transition: transform 0.2s;
+}
+
+.rmt-dice-toggle:hover {
+    transform: scale(1.1);
+}
+
+.rmt-dice-panel {
+    position: absolute;
+    bottom: 70px;
+    right: 0;
+    width: 280px;
+    background: var(--rmt-bg-card);
+    border: 1px solid var(--rmt-border);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+}
+
+.rmt-dice-panel h3 {
+    font-family: var(--rmt-font);
+    color: var(--rmt-gold);
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.rmt-dice-buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+    margin-bottom: 12px;
+}
+
+.rmt-dice-buttons button {
+    padding: 8px;
+    border: 1px solid var(--rmt-border);
+    border-radius: 6px;
+    background: rgba(255,255,255,0.05);
+    color: var(--rmt-text-light);
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.rmt-dice-buttons button:hover {
+    background: var(--rmt-primary);
+    border-color: var(--rmt-primary);
+}
+
+.rmt-dice-custom {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 12px;
+}
+
+.rmt-dice-custom input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid var(--rmt-border);
+    border-radius: 6px;
+    background: rgba(255,255,255,0.05);
+    color: var(--rmt-text-light);
+}
+
+.rmt-dice-custom button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    background: var(--rmt-gold);
+    color: #000;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.rmt-dice-result {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 900;
+    color: var(--rmt-gold);
+    font-family: var(--rmt-font);
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rmt-dice-result small {
+    display: block;
+    font-size: 12px;
+    color: #aaa;
+    font-family: var(--rmt-font-body);
+    font-weight: 400;
+}
+
+/* Action Log */
+.rmt-action-log {
+    max-height: 300px;
+    overflow-y: auto;
+    padding: 10px;
+    background: rgba(0,0,0,0.2);
+    border-radius: 8px;
+}
+
+.rmt-log-entry {
+    padding: 4px 8px;
+    font-size: 12px;
+    color: #888;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.rmt-log-entry .log-time {
+    color: #555;
+    font-size: 10px;
+}
+
+@media (max-width: 1024px) {
+    .rmt-session-panel {
+        grid-template-columns: 1fr;
+    }
+}

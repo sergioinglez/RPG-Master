@@ -1,0 +1,373 @@
+/**
+ * RPG Master Theme - Player Dashboard Styles
+ */
+
+/* Character Card List */
+.rmt-char-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 15px;
+}
+
+.rmt-char-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--rmt-border);
+    border-radius: 12px;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+}
+
+.rmt-char-card:hover {
+    background: rgba(123,45,142,0.15);
+    border-color: var(--rmt-primary-light);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.rmt-char-card.selected {
+    border-color: var(--rmt-gold);
+    box-shadow: 0 0 15px rgba(255,215,0,0.2);
+}
+
+.rmt-char-card-top {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.rmt-char-avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border: 3px solid var(--rmt-primary);
+    object-fit: cover;
+    background: var(--rmt-bg-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    flex-shrink: 0;
+}
+
+.rmt-char-name {
+    font-family: var(--rmt-font);
+    font-size: 1.2em;
+    color: var(--rmt-gold);
+}
+
+.rmt-char-subtitle {
+    font-size: 13px;
+    color: #888;
+    margin-top: 2px;
+}
+
+.rmt-char-level-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--rmt-primary);
+    color: white;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 16px;
+}
+
+/* Character Sheet */
+.rmt-sheet {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.rmt-sheet-full {
+    grid-column: 1 / -1;
+}
+
+/* Saving Throws & Skills List */
+.rmt-save-list,
+.rmt-skill-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.rmt-save-list li,
+.rmt-skill-list li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    font-size: 13px;
+}
+
+.rmt-prof-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid #555;
+    flex-shrink: 0;
+}
+
+.rmt-prof-dot.proficient {
+    background: var(--rmt-gold);
+    border-color: var(--rmt-gold);
+}
+
+.rmt-prof-dot.expertise {
+    background: var(--rmt-gold);
+    border-color: var(--rmt-gold);
+    box-shadow: 0 0 5px var(--rmt-gold);
+}
+
+.rmt-skill-mod {
+    margin-left: auto;
+    font-weight: 700;
+    color: var(--rmt-primary-light);
+    min-width: 30px;
+    text-align: right;
+}
+
+/* Combat Stats Row */
+.rmt-combat-stats {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    gap: 15px;
+    margin: 15px 0;
+}
+
+.rmt-combat-stat {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--rmt-border);
+    border-radius: 10px;
+    padding: 12px 20px;
+    min-width: 80px;
+}
+
+.rmt-combat-stat-value {
+    font-size: 28px;
+    font-weight: 900;
+    font-family: var(--rmt-font);
+    color: var(--rmt-text-white);
+}
+
+.rmt-combat-stat-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    color: var(--rmt-secondary);
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-top: 4px;
+}
+
+/* Money */
+.rmt-money-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.rmt-money-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-weight: 600;
+}
+
+.rmt-money-item .coin {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 900;
+}
+
+.coin-gold { background: #ffd700; color: #000; }
+.coin-silver { background: #c0c0c0; color: #000; }
+.coin-copper { background: #b87333; color: #fff; }
+.coin-electrum { background: #9090c0; color: #000; }
+.coin-platinum { background: #e5e4e2; color: #000; }
+
+/* Modal */
+.rmt-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+}
+
+.rmt-modal-content {
+    background: var(--rmt-bg-darker);
+    border: 1px solid var(--rmt-border);
+    border-radius: 16px;
+    max-width: 800px;
+    width: 95%;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.rmt-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 25px;
+    border-bottom: 1px solid var(--rmt-border);
+}
+
+.rmt-modal-header h2 {
+    font-family: var(--rmt-font);
+    color: var(--rmt-gold);
+    margin: 0;
+}
+
+.rmt-modal-close {
+    background: none;
+    border: none;
+    color: #888;
+    font-size: 28px;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.rmt-modal-close:hover {
+    color: var(--rmt-danger);
+}
+
+.rmt-modal-body {
+    padding: 25px;
+}
+
+/* Create Character Steps */
+.rmt-create-step h3 {
+    font-family: var(--rmt-font);
+    color: var(--rmt-gold);
+    margin-bottom: 20px;
+}
+
+.rmt-attr-input {
+    width: 60px !important;
+    text-align: center;
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    padding: 8px !important;
+    background: rgba(255,255,255,0.1) !important;
+    border: 1px solid var(--rmt-border) !important;
+    border-radius: 8px !important;
+    color: var(--rmt-text-white) !important;
+}
+
+/* Death Saves */
+.rmt-death-saves {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.rmt-death-saves-group {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.rmt-death-save-dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2px solid #555;
+}
+
+.rmt-death-save-dot.success { border-color: var(--rmt-success); }
+.rmt-death-save-dot.success.filled { background: var(--rmt-success); }
+.rmt-death-save-dot.failure { border-color: var(--rmt-danger); }
+.rmt-death-save-dot.failure.filled { background: var(--rmt-danger); }
+
+/* Inventory styles in player context */
+.rmt-inventory-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.rmt-inventory-item-actions {
+    margin-left: auto;
+    display: flex;
+    gap: 5px;
+}
+
+/* Weight tracker */
+.rmt-weight-tracker {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    background: rgba(255,255,255,0.03);
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-size: 13px;
+}
+
+/* Achievements */
+.rmt-achievement-card {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    padding: 15px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--rmt-border);
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.rmt-achievement-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, var(--rmt-secondary), var(--rmt-gold));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    flex-shrink: 0;
+}
+
+.rmt-achievement-info h4 {
+    color: var(--rmt-gold);
+    margin: 0 0 4px;
+    font-family: var(--rmt-font);
+}
+
+.rmt-achievement-info p {
+    margin: 0;
+    font-size: 13px;
+    color: #888;
+}
+
+@media (max-width: 768px) {
+    .rmt-sheet {
+        grid-template-columns: 1fr;
+    }
+    
+    .rmt-char-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .rmt-combat-stats {
+        flex-wrap: wrap;
+    }
+}

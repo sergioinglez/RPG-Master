@@ -1,0 +1,163 @@
+/**
+ * RPG Master Toolkit - Admin Styles
+ */
+
+/* Dashboard Grid */
+.rmt-admin-wrap {
+    max-width: 1400px;
+}
+
+.rmt-dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Cards */
+.rmt-card {
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.rmt-card h2 {
+    margin-top: 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #7b2d8e;
+    color: #1d2327;
+    font-size: 1.2em;
+}
+
+/* Quick Links */
+.rmt-quick-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.rmt-quick-links li {
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0f1;
+}
+
+.rmt-quick-links li:last-child {
+    border-bottom: none;
+}
+
+.rmt-quick-links a {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    color: #2271b1;
+    display: block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+.rmt-quick-links a:hover {
+    background: #f0f6fc;
+}
+
+/* Meta Boxes */
+.rmt-meta-box .form-table th {
+    width: 180px;
+    font-weight: 600;
+}
+
+.rmt-meta-box .form-table td input.small-text {
+    width: 80px;
+}
+
+/* Badges */
+.rmt-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.rmt-badge-exploration { background: #0073aa; }
+.rmt-badge-combat { background: #dc3232; }
+.rmt-badge-social { background: #46b450; }
+.rmt-badge-puzzle { background: #826eb4; }
+.rmt-badge-rest { background: #00a0d2; }
+.rmt-badge-travel { background: #ca4a1f; }
+.rmt-badge-cutscene { background: #e65100; }
+.rmt-badge-shop { background: #dba617; }
+
+/* Session Panel */
+.rmt-session-controls {
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.rmt-session-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #7b2d8e;
+}
+
+.rmt-session-header h2 {
+    margin: 0;
+    flex: 1;
+}
+
+.rmt-narration-text {
+    background: #fef8e7;
+    border-left: 4px solid #dba617;
+    padding: 15px 20px;
+    font-size: 15px;
+    line-height: 1.7;
+    font-style: italic;
+    border-radius: 0 8px 8px 0;
+    white-space: pre-wrap;
+}
+
+/* HP Bar in tables */
+.rmt-hp-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.rmt-hp-bar-track {
+    width: 60px;
+    height: 8px;
+    background: #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.rmt-hp-bar-fill {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.3s;
+}
+
+/* Upload Button */
+.rmt-upload-image {
+    margin-left: 8px !important;
+}
+
+/* Responsive */
+@media screen and (max-width: 782px) {
+    .rmt-dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .rmt-session-header {
+        flex-wrap: wrap;
+    }
+}

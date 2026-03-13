@@ -1,0 +1,80 @@
+/*
+Theme Name: RPG Master Theme
+Theme URI: https://seu-dominio.com/rpg-master-theme
+Author: RPG Master Dev
+Author URI: https://seu-dominio.com
+Description: Tema WordPress para o RPG Master Toolkit. Interfaces para Mestre, Jogadores e Tela de Exibição de sessões de RPG (D&D 5e).
+Version: 1.0.0
+Requires at least: 6.0
+Requires PHP: 7.4
+License: GPL v2 or later
+Text Domain: rpg-master-theme
+Tags: rpg, dnd, gaming, dark-theme
+*/
+
+/* Este tema depende do plugin RPG Master Toolkit para funcionar corretamente */
+/* Os estilos principais estão no plugin (frontend.css) */
+/* Estilos específicos do tema abaixo */
+
+/* =============================================
+   ESTILOS GERAIS DO TEMA
+   ============================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Nunito:wght@300;400;600;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito', 'Segoe UI', sans-serif;
+    background: #1a1a2e;
+    color: #e0e0e0;
+}
+
+/* WordPress Admin Bar fix */
+body.admin-bar .rmt-header {
+    top: 32px;
+}
+
+@media screen and (max-width: 782px) {
+    body.admin-bar .rmt-header {
+        top: 46px;
+    }
+}
+
+/* =============================================
+   LOGIN REDIRECT STYLES
+   ============================================= */
+.rmt-login-required {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+}
+
+.rmt-login-box {
+    background: rgba(15, 52, 96, 0.8);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 40px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    backdrop-filter: blur(10px);
+}
+
+.rmt-login-box h2 {
+    font-family: 'Cinzel', serif;
+    color: #ffd700;
+    margin-bottom: 15px;
+}
+
+.rmt-login-box p {
+    color: #aaa;
+    margin-bottom: 25px;
+}
+
+.rmt-login-box .rmt-btn {
+    display: inline-block;
+    text-decoration: none;
+}
